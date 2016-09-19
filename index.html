@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="author" content="Noisky">
+<meta name="copyright" content="Noisky&#39;s Laboratory">
+<meta name="ViewPort" content="initial-scale=1, minimum-scale=1, width=device-width">
+<meta name="HandheldFriendly" content="true">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
 	
 	<title>校园网登录器</title>
 
@@ -47,7 +55,9 @@
 		body,
 		p,
 		h2,
+	
 		div {
+		text-align:center;
 			margin: 0;
 			padding: 0
 		}
@@ -61,6 +71,7 @@
 			-ms-user-select: none
 			margin:0 auto;
 		}
+
 		
 		html {
 			font: 12px "Segoe UI", "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif
@@ -137,14 +148,14 @@
 		
 		.m{
 		float:left;
-		margin:0px 16px 0px 0px;
 		}
 		.n{
-		float:left;
-
+		margin-left:20px;
 		}
 		.mn {
-        margin:0px 0px 45px 242px;
+		padding-bottom:10px;
+		width:120px;
+		margin:0px auto;
 		}
 		
 	</style>
@@ -155,7 +166,7 @@
 		<p class="title">河南工业大学</p>
 		<div class="box">
 			<h2>校园网客户端</h2>			
-			<form  action="http://172.16.154.130:69/cgi-bin/srun_portal" method="POST" onsubmit="login_init()">
+			<form action="http://172.16.154.130:69/cgi-bin/srun_portal" method="POST" onsubmit="login_init()">
 				<input type="hidden" name="action" value="login"> <p class="main">用户名:
 				<input id="username"><br>
 				<input type="hidden" id="real_username" name="username"> 密码:
@@ -169,10 +180,10 @@
 				<input type="hidden" name="minutes" value="0"> Ac_id:
 				<input type="text" name="ac_id" value="1" id="login_ac_id"><br></p>
 				<div class="mn">
-				<div class="m">
-				<input style="width:50px;" type="submit" value="登录">
+				<div>
+				<input class="m" style="width:50px;" type="submit" value="登录">
 				</div>
-			</form>
+			
 
 			<!-- 注销 -->
 			<form action="http://172.16.154.130:69/cgi-bin/srun_portal" method="POST" onsubmit="logout_init()">
@@ -182,11 +193,11 @@
 				<input type="hidden" name="ac_id" id="logout_ac_id">
 				<input type="hidden" name="mac">
 				<div>
-				<input style="width:50px;" class="n" type="submit" value="注销">
+				<input class="n" style="width:50px;" type="submit" value="注销">
 				</div>
 				
-			</div>
-			</form>
+			</form></div></form>
+			
 
 			<!-- 查看当前登录状态 -->
 			<form action="http://172.16.154.130/cgi-bin/rad_user_info" method="GET">
