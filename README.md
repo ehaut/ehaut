@@ -1,4 +1,4 @@
-# srun3k-client-for-web
+# Srun3k-Client-For-Web
 srun3k client written in HTML/JavaScript for Haut campus network
 
 河南工业大学校园网客户端（HTML/JavaScript版）
