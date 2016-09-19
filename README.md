@@ -8,7 +8,7 @@ srun3k client written in HTML/JavaScript for Haut campus network
  - 响应式设计，兼容不同大小的屏幕。
  - 去除 获取校园广播。
 
- - 基于 @samuelts  版美化。
+ - 基于 <a href="https://github.com/samuelts/srun3k-client/"><b><font>@samuelts </font></b></a> 版美化。
 
  - 网页版 https://www.noisky.cn/jiaowu/weblogin/index_zh.html
  - 离线版 (将网页保存至本地使用浏览器打开)
