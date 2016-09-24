@@ -12,3 +12,5 @@ srun3k client written in HTML/JavaScript for Haut campus network
 
  - 网页版 https://www.noisky.cn/jiaowu/weblogin/index_zh.html
  - 离线版 (将网页保存至本地使用浏览器打开)
+
+ -  开发者指南 https://github.com/samuelts/srun3k-client/wiki/Developer-Guide
