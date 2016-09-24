@@ -41,6 +41,10 @@
 		function logout_init() {
 			document.getElementById("logout_ac_id").value = document.getElementById("login_ac_id").value;
 		}
+		
+		function openurl(url) {
+			window.location.href = url;
+		}
 	</script>
 
 	<style type="text/css">
@@ -201,9 +205,9 @@
 			
 
 			<!-- 查看当前登录状态 -->
-			<form action="http://172.16.154.130/cgi-bin/rad_user_info" method="GET">
-				<input type="submit" value="点击查看登录状态">
-			</form>
+			<button onclick="openurl(&#39;http://172.16.154.130/cgi-bin/rad_user_info&#39;)">登陆状态</button>
+			<button onclick="openurl(&#39;http://172.16.154.130:8800/&#39;)">自服务</button>
+			<br>
 		        <br><p>请右键另存为到本地后使用</p>
                 <pre>如果提示 "login_error#INFO failed, BAS respond timeout"，更改 <b>Ac_id</b> 的值然后重试。通常来说，这个值是 <b>1</b> 或者 <b>2</b>。<br></pre>
 		</div>
