@@ -71,16 +71,20 @@
 				{name: 'n', value: 117},
 				{name: 'mbytes', value: 0},
 				{name: 'minutes', value: 0},
-				{name: 'mac', value: '00:00:00:00:00:00'},
+				{name: 'mac', value: document.getElementById('mac').value},
 				{name: 'action', value: 'login'}
 			]);
 		}
 
 		function logout() {
+			var username = document.getElementById('username').value;
+			if (username.length == 0) 
+				username = 'unknown_username';
+
 			form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
-				{name: 'username', value: 'logout'},
+				{name: 'username', value: username},
 				{name: 'ac_id', value: document.getElementById('ac_id').value},
-				{name: 'mac', value: '00:00:00:00:00:00'},
+				{name: 'mac', value: document.getElementById('mac').value},
 				{name: 'type', value: 2},
 				{name: 'action', value: 'logout'}
 			]);
@@ -211,7 +215,8 @@
         <p class="main">		
 		用户名: <input id="username" /><br />
 		密码: <input id="password" type="password" /><br />
-		Ac_id: <input type="number" value="1" id="ac_id" /><br /></p>
+		Ac_id: <input type="number" value="1" id="ac_id" /><br />
+		Mac_地址: <input value="00:00:00:00:00:00" id="mac" /><br /></p>
 		<div class="m">
 		<button class="sky" style="width: 50px;" onclick="login()">登陆</button>
 		<button style="width: 50px;" onclick="logout()">注销</button><br />
