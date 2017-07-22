@@ -1,16 +1,14 @@
-# Srun3k-Client-For-Web
-srun3k client written in HTML/JavaScript for Haut campus network
+## sb-Srun3k-python版
+因为学校全面禁止了路由器，使用路由器会导致五分钟一断线，于是就诞生了python版本
 
-河南工业大学校园网客户端（HTML/JavaScript版）
+python版实现了
 
-纯 HTML + JavaScript 实现，仅需任意浏览器一枚即可运行，无需安装任何运行时。
+- 自动保存输入的用户名和密码（需要更改删除config.ini配置文件即可重新输入）
 
- - 响应式设计，兼容不同大小的屏幕。
- - 去除 获取校园广播。
+- 掉线自动重连（每秒检测一下登录状态，实现掉线一秒自动重连）
 
- - 基于 <a href="https://github.com/samuelts/srun3k-client/"><b><font>@samuelts </font></b></a> 版美化。
+- 后台向服务器发送UDP心跳包
 
- - 网页版 https://www.noisky.cn/jiaowu/weblogin/index_zh.html
- - 离线版 (将网页保存至本地使用浏览器打开)
+由于现在学校的官方客户端貌似把心跳包的端口改到了4338，所以现在每30s同时向3338和4338端口同时发送心跳包
 
- -  开发者指南 https://github.com/samuelts/srun3k-client/wiki/Developer-Guide
+不过学校官方好像更改了心跳包的长度，这个交给大佬们破解吧。。
