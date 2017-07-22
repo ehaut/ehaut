@@ -15,6 +15,6 @@ Python 版实现了
 不过学校官方好像更改了心跳包的长度，这个等开学了交给大佬们破解吧（暑期大佬们都不在学校）。。
 
 ## 网页版(HTML)
--------------
+
 https://github.com/noisky/srun3k-sb-client/tree/master
 
