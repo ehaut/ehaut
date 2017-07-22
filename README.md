@@ -16,5 +16,5 @@ Python 版实现了
 
 ## 网页版(HTML)
 -------------
-    https://github.com/noisky/srun3k-sb-client/tree/master
+https://github.com/noisky/srun3k-sb-client/tree/master
 
