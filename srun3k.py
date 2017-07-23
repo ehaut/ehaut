@@ -14,16 +14,16 @@ from urllib.request import urlopen
 
 STATUS = 'http://172.16.154.130/cgi-bin/rad_user_info'
 PORTAL = 'http://172.16.154.130:69/cgi-bin/srun_portal'
-UDP_PORT1 = ('172.16.154.130', 3338)
-UDP_PORT2 = ('172.16.154.130', 4338)
+#UDP_PORT1 = ('172.16.154.130', 3338)
+#UDP_PORT2 = ('172.16.154.130', 4338)
 
 cf = configparser.ConfigParser()
 
 print("---------------------------------------------\n")
 print("         欢迎使用校园网登陆器 py 版         \n")
-print("         Made By 曾大佬 & 饭饭  V1.0        \n")
-print("       程序会在后台发送心跳包以保持在线     \n")
-print("                请勿关闭本窗口              \n")
+print("         Made By 曾大佬 & 饭饭  V1.1        \n")
+print("  程序会自动检测是否在线，并且掉线自动重连  \n")
+print("  如需下线请关闭本窗口，然后使用网页版注销  \n")
 print("---------------------------------------------\n")
 
 if os.path.isfile('config.ini'):
@@ -64,7 +64,7 @@ def password_encrypt(password, key='1234567890'):
     return ''.join(result)
 
 
-def udp_keep_alive(username: bytes, mac=b'00:00:00:00:00:00') -> None:
+def udp_keep_alive(username: bytes, mac=b'02:00:00:00:00:00') -> None:
     pack = struct.pack('! 12s 20x 17s 7x', username, mac)
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     while True:
@@ -84,7 +84,7 @@ def http_keep_login(username: str, password: str) -> None:
         'ac_id': 1,
         'drop': 0,
         'pop': 1,
-        'type': 2,
+        'type': 10,
         'n': 117,
         'mbytes': 0,
         'minutes': 0,
@@ -106,8 +106,8 @@ if __name__ == '__main__':
     p = PASSWORD
     mac = b'22:76:93:33:b2:a9'
     t1 = threading.Thread(target=http_keep_login, args=(u, p))
-    t2 = threading.Thread(target=udp_keep_alive, args=(u.encode(), mac))
+    #t2 = threading.Thread(target=udp_keep_alive, args=(u.encode(), mac))
     t1.start()
-    t2.start()
-    t2.join()
+    #t2.start()
+    #t2.join()
     print('End')
