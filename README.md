@@ -1,5 +1,5 @@
 # SB-Srun3k-Client-For-Web
-## 2017-7-23更新，修复了校园网频繁掉线的问题，现在应该能正常使用路由器了
+### 2017-7-23更新，修复了校园网频繁掉线的问题，现在应该能正常使用路由器了 ###
 
 srun3k client written in HTML/JavaScript for Haut campus network
 

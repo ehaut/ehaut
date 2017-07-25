@@ -111,7 +111,7 @@
 		}
 		
 		body {
-			background: #2980B9;
+			background: #ebeef3;
 			text-align: center;
 			user-select: none;
 			-webkit-user-select: none;
@@ -129,7 +129,7 @@
 			margin-bottom: 25px;
 			font-size: 30px;
 			font-weight: 300;
-			color: #e05d6f
+			color: #515354
 		}
 		
 		
@@ -154,12 +154,13 @@
 		.box {
 			position: relative;
 			top: 80px;
-			width: 600px;
+			width: 350px;
 			max-width: 85%;
 			margin: 0 auto;
 			background: #fff;
 			padding: 15px;
-			box-shadow: 0 0 50px #2964B9
+			border-radius: 8px;
+			box-shadow: 0 0 50px rgba(0,0,0,.2)
 		}
 		
 		.main {
@@ -175,7 +176,7 @@
 			top: 80px;
 			margin: 15px 15px 0;
 			font-size: 12px;
-			color: #4eb0f8
+			color: rgba(0,0,0,.87)
 		}
 		
 		pre {
@@ -187,18 +188,19 @@
 			font-size: 14px;
 			text-align: left;
 			word-break: break-all;
+			border-bottom-right-radius:8px;
+			border-bottom-left-radius:8px;
 			white-space: pre-wrap
 		}
 
 		a {
-			color: lightblue;
+			color: #1678C2;
 			text-decoration: none;
 		}
 		
 		.m{
 		padding: 0px 0px 8px 0px;
 		}
-		.n{margin: 0 0 -18px 0;}
 
     .ui input[type=text],.ui input[type=password],.ui input[type=number]{
 	margin: 0;
@@ -258,9 +260,9 @@
 	box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(34,36,38,.15) inset;
 }
 
-.ui.red.button{background: #E05D6F;}
+.ui.red.button{background: #95a2a9;}
 .ui.red.button:hover {
-	background-color: #BB515F;
+	background-color: #515354;
 	box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(34,36,38,.15) inset;}
 .ui.set.button{font-size: 12px;background: #3498DB;padding: 0.9em 1.1em;}
 .ui.set.button:hover {background-color: #287AB1;
@@ -270,12 +272,12 @@
 .acenter{float:none;}
 .aright{float:right;}
 .aset{color:rgb(0, 0, 0);text-decoration: underline;}
+
 	</style>
 </head>
 
 <body>
 	<div class="container">
-		<p class="title">河南工业大学</p>
 		<div class="box">
 		<h2>校园网客户端</h2>		
         <p class="main">	
@@ -293,18 +295,17 @@
         </div>
 		<!-- 管理功能 -->
 		<br><p>请右键另存为到本地后使用</p><br>
-		<div class="n">
+		<div>
 		<a class="aleft aset" href="http://172.16.154.130/cgi-bin/rad_user_info">登陆状态</a>
 		<a class="acenter aset" href="http://172.16.154.130/get_msg.php">查看公告</a>
 		<a class="aright aset" href="http://172.16.154.130:8800/">自助服务</a>
 		</div>
-        <pre>如果提示 "login_error#INFO failed, BAS respond timeout"，更改 <b>Ac_id</b> 的值然后重试。通常来说，这个值是 <b>1</b> 或者 <b>2</b>。<br></pre>
 		</div>
         
 	</div>
 
 	<br><br>
 	<p class="foot">Srun3k Client v1.1.1 &copy; Authored by <b><font><a href="https://github.com/zeng-xs/srun3k-client/">Zengxs</a></font></b> | Beautified by <b><font><a href="https://www.noisky.cn/">Noisky</a></font></b></p>
-    <p class="foot"><b><a href="./fuck5101.html">白色版</a></b></p>
+    <p class="foot"><b><a href="./index.html">蓝色版</a></b></p>
 </body>
 </html>
