@@ -20,6 +20,3 @@ srun3k client written in HTML/JavaScript for Haut campus network
 
 
 
-如有需要可以试试 Python 版
-------------
-srun3k-py : https://github.com/noisky/srun3k-sb-client/tree/srun3k-py
