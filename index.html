@@ -20,7 +20,8 @@
 			return "{SRUN3}\r\n" + username_crypto;
 		}
 
-		function password_encrypt(password, key = '1234567890') {
+		function password_encrypt(password) {
+            var key = '1234567890';
 			var password_crypto = "";
 			for (var i = 0; i < password.length; ++i) {
 				var ki = password.charCodeAt(i) ^ key.charCodeAt(key.length - i % key.length - 1);
