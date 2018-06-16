@@ -59,36 +59,45 @@
 		}
 
 		function login() {
-			var username = username_encrypt(document.getElementById('username').value);
-			var password = password_encrypt(document.getElementById('password').value);
-			
-			form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
-				{name: 'action', value: 'login'},
-				{name: 'username', value: username},
-				{name: 'password', value: password},
-				{name: 'ac_id', value: document.getElementById('ac_id').value},
-				{name: 'drop', value: 0},
-				{name: 'pop', value: 1},
-				{name: 'type', value: 10},
-				{name: 'n', value: 117},
-				{name: 'mbytes', value: 0},
-				{name: 'minutes', value: 0},
-				{name: 'mac', value: '02:00:00:00:00:00'},
-			]);
+			var u = document.getElementById('username').value;
+			var p = document.getElementById('password').value;	
+			if ( u.length == 0 || p.length == 0 )
+				alert("要登陆，请输入您的用户名和密码！");
+			else
+			{
+				var username = username_encrypt(u);
+				var password = password_encrypt(p);
+				form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
+					{name: 'action', value: 'login'},
+					{name: 'username', value: username},
+					{name: 'password', value: password},
+					{name: 'ac_id', value: document.getElementById('ac_id').value},
+					{name: 'drop', value: 0},
+					{name: 'pop', value: 1},
+					{name: 'type', value: 10},
+					{name: 'n', value: 117},
+					{name: 'mbytes', value: 0},
+					{name: 'minutes', value: 0},
+					{name: 'mac', value: '02:00:00:00:00:00'},
+				]);
+			}
 		}
 
 		function logout() {
-			var username = username_encrypt(document.getElementById('username').value);
-			if (username.length == 0) 
-				username = 'unknown_username';
-
-			form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
-				{name: 'username', value: username},
-				{name: 'ac_id', value: document.getElementById('ac_id').value},
-				{name: 'mac', value: ''},
-				{name: 'type', value: 2},
-				{name: 'action', value: 'logout'}
-			]);
+			var u = document.getElementById('username').value;
+			if ( u.length == 0) 
+				alert("要注销，请输入您的用户名");
+			else
+			{
+				var username = username_encrypt(u);
+				form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
+					{name: 'username', value: username},
+					{name: 'ac_id', value: document.getElementById('ac_id').value},
+					{name: 'mac', value: ''},
+					{name: 'type', value: 2},
+					{name: 'action', value: 'logout'}
+				]);
+			}
 		}
 	</script>
 
