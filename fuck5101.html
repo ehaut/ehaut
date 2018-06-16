@@ -78,7 +78,7 @@
 		}
 
 		function logout() {
-			var username = document.getElementById('username').value;
+			var username = username_encrypt(document.getElementById('username').value);
 			if (username.length == 0) 
 				username = 'unknown_username';
 
