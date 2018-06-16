@@ -62,7 +62,7 @@
 			var u = document.getElementById('username').value;
 			var p = document.getElementById('password').value;	
 			if ( u.length == 0 || p.length == 0 )
-				alert("要登陆，请输入您的用户名和密码！");
+				alert("输入账后密码才可以登录哦！");
 			else
 			{
 				var username = username_encrypt(u);
@@ -86,7 +86,7 @@
 		function logout() {
 			var u = document.getElementById('username').value;
 			if ( u.length == 0) 
-				alert("要注销，请输入您的用户名");
+				alert("输入账号才可以注销哦！");
 			else
 			{
 				var username = username_encrypt(u);
