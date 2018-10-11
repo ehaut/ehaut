@@ -10,14 +10,14 @@
   <meta name="HandheldFriendly" content="true">
   <meta name="renderer" content="webkit">
   <link rel="stylesheet" href="//static.ffis.me/docsify/css/theme-simple.css?v=0.4.0">
-  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <link rel="stylesheet" href="//static.ffis.me/docsify/css/gitment.css">
   <!-- Custom theme stylesheet -->
   <style>
   .markdown-section a {color: var(--theme-color);}
   </style>
 </head>
 <body>
-  <div id="app">Please wait...</div>
+  <div data-app id="main">Please wait...</div>
   <script>
     window.$docsify = {
 	  loadSidebar: true,
@@ -28,6 +28,7 @@
 	  coverpage: 'coverpage.md',
 	  subMaxLevel: 2,
       name: 'Developer Guide',
+	  el:'#main',
       repo: 'https://github.com/noisky/srun3k-sb-client',
 	  search: {
         noData: {
@@ -44,17 +45,19 @@
       }
     }
   </script>
-  <div id="container"></div>
-
-  <script src="//static.ffis.me/docsify/js/docsify.min.js?v=4.7.1"></script>
-  <script src="//static.ffis.me/docsify/js/docsify-themeable.min.js?v=0.4.0"></script>
-  <script src="//static.ffis.me/docsify/js/search.min.js?v=4.7.1"></script>
-  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <main>
+    <section class="content">
+      <article class="markdown-section" id="main">
+        <div id="container"></div>
+      <article>
+	</section>
+  </main>
+  <script src="//static.ffis.me/docsify/js/gitment.js"></script>
     <script>
     var clientId = '39e4f891d35b30dcdecc'
     var clientSecret = '4f5a9d344a27d4da911d7a6c458804720d287793'
     var gitment = new Gitment({
-      id: 'docsify',
+      id: '<%= page.date %>',
       owner: 'noisky',
       repo: 'srun3k-sb-client',
       oauth: {
@@ -65,6 +68,10 @@
 
     gitment.render('container')
   </script>
+  <script src="//static.ffis.me/docsify/js/docsify.min.js?v=4.7.1"></script>
+  <script src="//static.ffis.me/docsify/js/docsify-themeable.min.js?v=0.4.0"></script>
+  <script src="//static.ffis.me/docsify/js/search.min.js?v=4.7.1"></script>
+
 
 </body>
 </html>
