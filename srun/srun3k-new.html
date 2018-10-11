@@ -80,6 +80,11 @@
 // 				},
 // 			});
 // 	    }
+	function Message() {
+		$("pre").css("background","#1aad18");
+		$("#statusbar").text("正在打开公告信息...成功！")
+		window.open("http://172.16.154.130/get_msg.php");
+	}
 	function FuckMicrosoft() { //IE和EDGE不支持信息保存
 		var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
 		if (!!window.ActiveXObject || "ActiveXObject" in window||userAgent.indexOf("Edge") > -1)
@@ -155,37 +160,43 @@
         return byte + " B";
     }
 
-	function selfService(){
-			$("#statusbar").text("正在打开自服务...")
-			$("pre").css("background","#3498db");
-			var username = $("#username").val();
-			var password = $("#password").val();
-			if (typeof username != "undefined" && username != "") {
-			var ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
-        		base64 = $.base64;
-        	base64.setAlpha(ALPHA);
-        	var data = "";
-        	if (typeof password != "undefined" && password != "") {
-        		var pwd = md5(password);
-        		data = base64.encode(username+":"+pwd);
-        	}
-        	data = base64.encode(username+":"+username);
-			console.log(data);
-        	if (data != "") {
-        		window.open("http://172.16.154.130:8800/site/sso?data="+data);
-				$("pre").css("background","#1aad18");
-				$("#statusbar").text("正在打开自服务...成功！")
-        		return;
-        	}
-			$("pre").css("background","#1aad18");
-			$("#statusbar").text("正在打开自服务...成功！")
-        	window.open("http://172.16.154.130:8800");
-			return;
-		}
-		window.open("http://172.16.154.130:8800");
+	function FixSelfService(){ //由于官方在未登录按自服务会产生AuthInfoError，顾用此临时替代
+		//同样官方在登录时-打开自服务-注销-再登录也会产生此bug，因此放弃官方自动自服务登录
 		$("pre").css("background","#1aad18");
 		$("#statusbar").text("正在打开自服务...成功！")
+		window.open("http://172.16.154.130:8800");
 	}
+	// function selfService(){
+	// 		$("#statusbar").text("正在打开自服务...")
+	// 		$("pre").css("background","#3498db");
+	// 		var username = $("#username").val();
+	// 		var password = $("#password").val();
+	// 		if (typeof username != "undefined" && username != "") {
+	// 		var ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+    //     		base64 = $.base64;
+    //     	base64.setAlpha(ALPHA);
+    //     	var data = "";
+    //     	if (typeof password != "undefined" && password != "") {
+    //     		var pwd = md5(password);
+    //     		data = base64.encode(username+":"+pwd);
+    //     	}
+    //     	data = base64.encode(username+":"+username);
+	// 		console.log(data);
+    //     	if (data != "") {
+    //     		window.open("http://172.16.154.130:8800/site/sso?data="+data);
+	// 			$("pre").css("background","#1aad18");
+	// 			$("#statusbar").text("正在打开自服务...成功！")
+    //     		return;
+    //     	}
+	// 		$("pre").css("background","#1aad18");
+	// 		$("#statusbar").text("正在打开自服务...成功！")
+    //     	window.open("http://172.16.154.130:8800");
+	// 		return;
+	// 	}
+	// 	window.open("http://172.16.154.130:8800");
+	// 	$("pre").css("background","#1aad18");
+	// 	$("#statusbar").text("正在打开自服务...成功！")
+	// }
 		
 	function username_encrypt(username) {
 		var username_crypto = "";
@@ -473,7 +484,8 @@
 						</div>
 						<div class="m">
 							<button class="ui button" type="submit" onclick="Login()">&nbsp;登&nbsp;陆&nbsp;</button>
-							<button class="ui button" type="submit" onclick="selfService()">自助服务</button>
+							<button class="ui button" type="submit" onclick="FixSelfService()">自助服务</button>
+							<button class="ui button" type="submit" onclick="Message()">查看公告</button>
 						</div>
 				</div>
 				<div id="logout_box" style="display:none;visibility:hidden">
@@ -492,7 +504,8 @@
 					</div>
 					<div class="m">
 						<button class="ui red button" type="submit" onclick="Logout()">&nbsp;注 销&nbsp;</button>
-						<button class="ui button" type="submit" onclick="selfService()">自助服务</button>
+						<button class="ui button" type="submit" onclick="FixSelfService()">自助服务</button>
+						<button class="ui button" type="submit" onclick="Message()">查看公告</button>
 					</div>
 				</div>
 				<!-- <div id="message_box">
