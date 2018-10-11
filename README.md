@@ -1,4 +1,4 @@
-# SB-Srun3k-Client-For-Web
+# Srun3k-Client-For-Web
 
 Srun3k client written in HTML/JavaScript for Haut campus network
 
@@ -11,9 +11,8 @@ Srun3k client written in HTML/JavaScript for Haut campus network
 
  - 基于 <a href="https://github.com/samuelts/srun3k-client/"><b><font>@samuelts </font></b></a> 版美化。
 
- - 网页版 https://ffis.me/jiaowu/weblogin/index_zh.html
+ - 网页版 http://ehaut.cn/srun/srun3k-new.html
  - 离线版 (将网页保存至本地使用浏览器打开)
 
-  -  开发者指南 https://github.com/samuelts/srun3k-client/wiki/Developer-Guide
- 
+  -  开发者指南 http://ehaut.cn/#/?id=main
 
