@@ -8,5 +8,5 @@
 - Legacy browser support (IE10+)
 
 [开发指南](#main)
-[点击体验](https://ffis.me/jiaowu/weblogin/index_zh.html)
+[点击体验](http://ehaut.cn/srun/srun3k-new.html)
 [GitHub](https://github.com/noisky/srun3k-sb-client)
