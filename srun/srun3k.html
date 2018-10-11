@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="author" content="Zengxs,Noisky">
+	<meta name="copyright" content="Noisky's Laboratory">
+	<meta name="ViewPort" content="initial-scale=1, minimum-scale=1, width=device-width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="renderer" content="webkit">
+	<title>校园网登录器</title>
+	<link rel="shortcut icon" type="image/png" href="data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAABK0lEQVR4Ab3LwUpUYRwF8N+92r29iKKPUKDSovYFSsOEGxd3UNf1DIFQQUHPYOajyOCuKG3SeoTuzGz+wV18MB/T3QT+zurAOe7cffvO/TQ398OZoUqPgd8iy41dS5U+CuFCY02lsm5kLIT3Srlu/seBRYVG210yg26+ZZkdrbCLpPZLOPAvI+FGJdkXLsAbMyew0ApjYSg5FxowE1rI2qHwSTIR1sCJ1mvI2oZwLZkLlT61MPuPw0RY12dTuJJ8FkZY9V1k+WIFx8Kp5IUwVmDbdGHeeoDCpTCQ1G6FBmz7luZfPQRHwkQlYU9o7YBVT7zy0mMr4JGp8Ezmg9BqFBIUjrr5OzlldwljhzbUapuOXQrhrdJSe25FlomnetSGzlybmbpy6rl77thfv0iYemrko00AAAAASUVORK5CYII="/>
+
+	<script>
+		function username_encrypt(username) {
+			var username_crypto = "";
+			for (var i = 0; i < username.length; ++i) {
+				username_crypto += String.fromCharCode(username.charCodeAt(i) + 4);
+			}
+			return "{SRUN3}\r\n" + username_crypto;
+		}
+
+		function password_encrypt(password) {
+            var key = '1234567890';
+			var password_crypto = "";
+			for (var i = 0; i < password.length; ++i) {
+				var ki = password.charCodeAt(i) ^ key.charCodeAt(key.length - i % key.length - 1);
+				var _l = String.fromCharCode((ki & 0x0f) + 0x36);
+				var _h = String.fromCharCode((ki >> 4 & 0x0f) + 0x63);
+				if (i % 2 == 0) {
+					password_crypto += _l + _h;
+				} else {
+					password_crypto += _h + _l;
+				}
+			}
+			return password_crypto;
+		}
+
+        function form_submit(action, method, params) {
+            var f = document.createElement("form");
+            f.action = action;
+            f.method = method;
+
+            for (var i = 0; i < params.length; i++) {
+                var input = document.createElement("input");
+				input.type = 'hidden';
+                input.name = params[i].name;
+                input.value = params[i].value;
+                f.appendChild(input);
+            }
+
+            document.body.appendChild(f);
+            f.submit();
+            document.body.removeChild(f);
+        }
+
+		function openurl(url) {
+			window.location.href = url;
+		}
+
+		function login() {
+			var u = document.getElementById('username').value;
+			var p = document.getElementById('password').value;	
+			if ( u.length == 0 || p.length == 0 )
+				alert("输入学号和密码才可以登录哦！");
+			else
+			{
+				var username = username_encrypt(u);
+				var password = password_encrypt(p);
+				form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
+					{name: 'action', value: 'login'},
+					{name: 'username', value: username},
+					{name: 'password', value: password},
+					{name: 'ac_id', value: document.getElementById('ac_id').value},
+					{name: 'drop', value: 0},
+					{name: 'pop', value: 1},
+					{name: 'type', value: 10},
+					{name: 'n', value: 117},
+					{name: 'mbytes', value: 0},
+					{name: 'minutes', value: 0},
+					{name: 'mac', value: '02:00:00:00:00:00'},
+				]);
+			}
+		}
+
+		function logout() {
+			var u = document.getElementById('username').value;
+			if ( u.length == 0) 
+				alert("输入学号才可以注销哦！");
+			else
+			{
+				var username = username_encrypt(u);
+				form_submit('http://172.16.154.130:69/cgi-bin/srun_portal', 'post', [
+					{name: 'username', value: username},
+					{name: 'ac_id', value: document.getElementById('ac_id').value},
+					{name: 'mac', value: ''},
+					{name: 'type', value: 2},
+					{name: 'action', value: 'logout'}
+				]);
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+			cursor: default
+		}
+		
+		html,
+		body,
+		p,
+		h2,
+	
+		div {
+		text-align:center;
+			margin: 0;
+			padding: 0
+		}
+		
+		body {
+			background: #2980B9;
+			text-align: center;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			margin: 0 auto;
+		}
+
+		
+		html {
+			font: 12px "Segoe UI", "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif
+		}
+		
+		h2 {
+			margin-bottom: 25px;
+			font-size: 30px;
+			font-weight: 300;
+			color: #e05d6f
+		}
+		
+		
+		p {
+			line-height: 1.5em;
+			font-size: 12px;
+			color: #95a2a9;
+			margin-bottom: 5px
+		}
+		
+		.title {
+			position: relative;
+			top: 75px;
+			margin-bottom: .7em;
+			line-height: 30px;
+			font-size: 26px;
+			font-weight: 300;
+			color: #fff;
+			text-shadow: 0 0 4px #666666
+		}
+		
+		.box {
+			position: relative;
+			top: 80px;
+			width: 600px;
+			max-width: 85%;
+			margin: 0 auto;
+			background: #fff;
+			padding: 15px;
+			box-shadow: 0 0 50px #2964B9
+		}
+		
+		.main {
+			font-size: 18px;
+			color: #000;
+			font-weight: 500;
+			line-height: 1.7em;
+			margin: 0 0 10px
+		}
+		
+		.foot {
+			position: relative;
+			top: 80px;
+			margin: 15px 15px 0;
+			font-size: 12px;
+			color: #4eb0f8
+		}
+		
+		pre {
+			background: #3498DB;
+			color: #ffffff;
+			padding: 15px 20px;
+			margin: 25px -15px -15px;
+			line-height: 1.4em;
+			font-size: 14px;
+			text-align: left;
+			word-break: break-all;
+			white-space: pre-wrap
+		}
+
+		a {
+			color: lightblue;
+			text-decoration: none;
+		}
+		
+		.m{
+		padding: 0px 0px 8px 0px;
+		}
+		.n{margin: 0 0 -18px 0;}
+
+    .ui input[type=text],.ui input[type=password],.ui input[type=number]{
+	margin: 0;
+	outline: 0;
+	-webkit-appearance: none;
+	tap-highlight-color: rgba(255,255,255,0);
+	line-height: 1.2142em;
+	padding: .67861429em 1em;
+	background: #FFF;
+	border: 1px solid rgba(34,36,38,.15);
+	color: rgba(0,0,0,.87);
+	border-radius: .28571429rem;
+	box-shadow: 0 0 0 0 transparent inset;
+	-webkit-transition: color .1s ease,border-color .1s ease;
+	transition: color .1s ease,border-color .1s ease
+}
+.ui input:focus{  
+    border-style:solid;  
+    border-color: #03a9f4;  
+}  
+.field {
+    clear: both;
+    margin: 0 0 1em;
+	font-size:18px;
+}
+.ui.button {
+	cursor: pointer;
+	display: inline-block;
+	min-height: 1em;
+	outline: 0;
+	border: none;
+	vertical-align: baseline;
+	background: #2185D0;
+	color: rgb(255, 255, 255);
+	margin: 0 25px;
+	padding: .78571429em 1.5em;
+	text-transform: none;
+	text-shadow: none;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 1em;
+	font-style: normal;
+	text-decoration: none;
+	border-radius: .28571429rem;
+	box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+	transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+	will-change: '';
+	-webkit-tap-highlight-color: transparent
+}
+.ui.button:hover {
+	background-color: #1678c2;
+	box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(34,36,38,.15) inset;
+}
+
+.ui.red.button{background: #E05D6F;}
+.ui.red.button:hover {
+	background-color: #BB515F;
+	box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(34,36,38,.15) inset;}
+.ui.set.button{font-size: 12px;background: #3498DB;padding: 0.9em 1.1em;}
+.ui.set.button:hover {background-color: #287AB1;
+	box-shadow: 0 0 0 1px transparent inset,0 0 0 0 rgba(34,36,38,.15) inset;
+}
+.aleft{float:left;}
+.acenter{float:none;}
+.aright{float:right;}
+.aset{color:rgb(0, 0, 0);text-decoration: underline;}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<p class="title">河南工业大学</p>
+		<div class="box">
+		<h2>校园网客户端</h2>		
+        <p class="main">	
+        <div class="ui field">		
+		学号：<input id="username" type="text" name="text"/><br />
+		</div>
+		<div class="ui field">	
+		密码：<input id="password" type="password" name="password"/><br />
+		</div>
+		<div class="ui field">	
+	    Ac_id: <input type="number" value="1" id="ac_id" /><br /></div>
+		<div class="m">
+		<button class="ui button" type="submit" onclick="login()">登陆</button>
+		<button class="ui red button" type="submit" onclick="logout()">注销</button>
+        </div>
+		<!-- 管理功能 -->
+		<br><p>请右键另存为到本地后使用</p><br>
+		<div class="n">
+		<a class="aleft aset" href="http://172.16.154.130/cgi-bin/rad_user_info" target="_blank">登陆状态</a>
+		<a class="acenter aset" href="http://172.16.154.130/get_msg.php" target="_blank">查看公告</a>
+		<a class="aright aset" href="http://172.16.154.130:8800/" target="_blank">自助服务</a>
+		</div>
+        <pre>如果提示 "login_error#INFO failed, BAS respond timeout"，更改 <b>Ac_id</b> 的值然后重试。通常来说，这个值是 <b>1</b> 或者 <b>2</b>。<br></pre>
+		</div>
+        
+	</div>
+
+	<br><br>
+	<p class="foot">Srun3k Client v1.1.2 &copy; Authored by <b><font><a href="https://github.com/zeng-xs/srun3k-client/" target="_blank">Zengxs</a></font></b> | Beautified by <b><font><a href="https://www.noisky.cn/" target="_blank">Noisky</a></font></b></p>
+    <p class="foot"><b><a href="./fuck5101.html">白色版</a></b></p>
+</body>
+</html>
