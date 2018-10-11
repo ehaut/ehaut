@@ -10,7 +10,7 @@
 * [贡献名单](thanks.md)
 * [Powered by docsify](http://docsify.js.org)
 * **Links**
-- [![Code](https://static.ffis.me/docsify/ico/code.svg?size=16&color=808080)Demo](https://ffis.me/jiaowu/weblogin/index_zh.html)
-- [![Github](https://static.ffis.me/docsify/ico/github.svg?color=808080&size=16)Github](https://github.com/noisky/srun3k-sb-client)
+* [![Code](https://icongr.am/feather/code.svg?size=16&color=808080)Demo](https://codesandbox.io/s/xv36w4695o)
+* [![Github](https://icongram.jgog.in/simple/github.svg?color=808080&size=16)Github](https://github.com/jhildenbiddle/docsify-themeable)
 
 
