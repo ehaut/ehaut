@@ -10,6 +10,7 @@
   <meta name="HandheldFriendly" content="true">
   <meta name="renderer" content="webkit">
   <link rel="stylesheet" href="//static.ffis.me/docsify/css/theme-simple.css?v=0.4.0">
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   <!-- Custom theme stylesheet -->
   <style>
   .markdown-section a {color: var(--theme-color);}
@@ -44,22 +45,26 @@
     }
   </script>
   <div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: '页面 ID', // 可选。默认为 location.href
-  owner: '你的 GitHub ID',
-  repo: '存储评论的 repo',
-  oauth: {
-    client_id: '你的 client ID',
-    client_secret: '你的 client secret',
-  },
-})
-gitment.render('container')
-</script>
+
   <script src="//static.ffis.me/docsify/js/docsify.min.js?v=4.7.1"></script>
   <script src="//static.ffis.me/docsify/js/docsify-themeable.min.js?v=0.4.0"></script>
   <script src="//static.ffis.me/docsify/js/search.min.js?v=4.7.1"></script>
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var clientId = '39e4f891d35b30dcdecc'
+    var clientSecret = '4f5a9d344a27d4da911d7a6c458804720d287793'
+    var gitment = new Gitment({
+      id: 'docsify',
+      owner: 'noisky',
+      repo: 'srun3k-sb-client',
+      oauth: {
+        client_id: clientId,
+        client_secret: clientSecret,
+      },
+    })
+
+    gitment.render('container')
+  </script>
+
 </body>
 </html>
