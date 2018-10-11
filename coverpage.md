@@ -7,6 +7,7 @@
 - Improved desktop and mobile experience
 - Legacy browser support (IE10+)
 
-[开发指南](#main)
 [点击体验](http://ehaut.cn/srun/srun3k-new.html)
+[开发指南](#main)
+[FAQ](#main)
 [GitHub](https://github.com/noisky/srun3k-sb-client)
