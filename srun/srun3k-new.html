@@ -80,6 +80,11 @@
 // 				},
 // 			});
 // 	    }
+	function Message() {
+		$("pre").css("background","#1aad18");
+		$("#statusbar").text("正在打开公告信息...成功！")
+		window.open("http://172.16.154.130/get_msg.php");
+	}
 	function FuckMicrosoft() { //IE和EDGE不支持信息保存
 		var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
 		if (!!window.ActiveXObject || "ActiveXObject" in window||userAgent.indexOf("Edge") > -1)
@@ -480,6 +485,7 @@
 						<div class="m">
 							<button class="ui button" type="submit" onclick="Login()">&nbsp;登&nbsp;陆&nbsp;</button>
 							<button class="ui button" type="submit" onclick="FixSelfService()">自助服务</button>
+							<button class="ui button" type="submit" onclick="Message()">查看公告</button>
 						</div>
 				</div>
 				<div id="logout_box" style="display:none;visibility:hidden">
@@ -499,6 +505,7 @@
 					<div class="m">
 						<button class="ui red button" type="submit" onclick="Logout()">&nbsp;注 销&nbsp;</button>
 						<button class="ui button" type="submit" onclick="FixSelfService()">自助服务</button>
+						<button class="ui button" type="submit" onclick="Message()">查看公告</button>
 					</div>
 				</div>
 				<!-- <div id="message_box">
