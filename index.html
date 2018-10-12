@@ -9,8 +9,9 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="HandheldFriendly" content="true">
   <meta name="renderer" content="webkit">
-  <link rel="stylesheet" href="//static.ffis.me/docsify/css/theme-simple.css?v=0.4.6">
-  <link rel="stylesheet" href="//static.ffis.me/docsify/css/gitment.css">
+  <link rel="stylesheet" href="//static.ffis.me/docsify/css/theme-simple.css?v=0.4.7">
+  <link rel="stylesheet" href="//static.ffis.me/docsify/css/gitment.css?v=1.3">
+  <script src="//static.ffis.me/docsify/js/EditOnGithub.js?v=1.1"></script>
   <!-- Custom theme stylesheet -->
   <style>
   .markdown-section a {color: var(--theme-color);}
@@ -42,7 +43,12 @@
 	   themeable: {
           readyTransition : true,
           responsiveTables: true
-      }
+      },
+	   plugins: [
+          EditOnGithubPlugin.create(
+          'https://github.com/noisky/srun3k-sb-client/blob/master/'
+          )
+		]
     }
   </script>
   <main>
