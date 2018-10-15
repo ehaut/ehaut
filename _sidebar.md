@@ -2,10 +2,7 @@
 
 * [简介](/)
 * [开发者指南（待更新）](guide.md)
-  * [Test1](001.md)
-  * [Test2](002.md)
-  * [Test3](003.md)
-  * [Test4](004.md)
+* [FAQ](faq.md)
 * [更新记录](changelog.md)
 * [贡献名单](thanks.md)
 * **Links**
