@@ -85,7 +85,7 @@
 				</div>
 			<br><p>建议另存为到本地后使用。另外本页面将会经常更新，请经常访问和更新您的本地版本哦~</p>
 			<!-- <pre style="background: rgb(26, 173, 24);"><div id="statusbar">正在获取状态...成功！</div></pre> -->
-			<pre><div id="statusbar">欢迎使用校园网登陆器网页版！</div></pre> 
+			<pre><div id="statusbar">欢迎使用校园网登录器网页版！</div></pre> 
 		</div>
 	</div>
 	<br><br>
@@ -398,7 +398,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 
 	function GetStatus(ReGetStatus) {
 		/*if(ReGetStatus=='No')
-		{//非登陆后获取公告
+		{//非登录后获取公告
 			$("#statusbar").text("正在获取状态...");
 		}*/
 		$("pre").css("background","#3498db");
@@ -411,7 +411,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 				timeout:1000, //超时设置，默认ajax不设置
 				success: function(data) {
 					/*if(ReGetStatus=='No')
-					{//非登陆后获取公告
+					{//非登录后获取公告
 						$("#statusbar").text("正在获取状态...成功！");
 						$("pre").css("background","#1aad18");
 					}*/
@@ -424,7 +424,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 						//在线处理
 						$("#statusbar").text("正在获取状态...成功！");
 						$("pre").css("background","#1aad18");
-						if(ReGetStatus != "NO"){//非登陆后获取公告
+						if(ReGetStatus != "NO"){//非登录后获取公告
 							$("#statusbar").text("正在获取状态...成功！");
 							$("pre").css("background","#1aad18");
 						}
@@ -451,7 +451,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 	}
 	
 
-	// function FixSelfService(){ //由于官方在未登录按自服务会产生AuthInfoError，顾用此临时替代
+	// function FixSelfService(){ //由于官方在未登录按自服务会产生AuthInfoError，故用此临时替代
 	// 	//同样官方在登录时-打开自服务-注销-再登录也会产生此bug，因此放弃官方自动自服务登录
 	// 	$("pre").css("background","#1aad18");
 	// 	$("#statusbar").text("正在打开自服务...成功！")
@@ -557,7 +557,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 						if(IsSave==true&&CheckLocalStorage==false) {
 							//原来不存在信息并且勾选保存
 							if(!window.localStorage) {
-								$("#statusbar").text("登陆成功，但您的浏览器不支持存储登录信息！");
+								$("#statusbar").text("登录成功，但您的浏览器不支持存储登录信息！");
 								$("pre").css("background", "#ffcd43");
 							}
 							else {
@@ -579,7 +579,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 					}
 					else if(IsSave==true&&FuckMicrosoft())
 					{
-						$("#statusbar").text("登陆成功，但您的浏览器不支持存储登录信息！");
+						$("#statusbar").text("登录成功，但您的浏览器不支持存储登录信息！");
 						$("pre").css("background","#ffcd43");
 					}
 					GetStatus('NO');
@@ -598,11 +598,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 							Login();
 							return;
 						}
-						//针对limit_users_err提供一件断开全部功能，message code待测试，功能待测试
-						if (data.message == "E2606") {
+						//针对Limit Users Err提供一件断开全部功能，message code已获取，功能待测试
+						if (data.message == "E2901: (Third party -1)Limit Users Err") {
 							//console.log(data.message);
 							$("pre").css("background","#E05D6F");
-							$("#statusbar").text("登陆失败,请尝试断开全部,并等待1分钟再试")
+							$("#statusbar").text("Limit Users Err,请尝试断开全部,并等待1分钟再试")
 							$("#login_btn").css("display","none");
 							$("#logoutAll_btn").css("display","inline");
 							return;
@@ -614,7 +614,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 						}
 						//Show Error Message
 						//alert(data.message);
-						$("#statusbar").text("登陆失败，请检查系统返回原因！");
+						$("#statusbar").text("登录失败，请检查系统返回原因！");
 					    $("pre").css("background","#E05D6F");
 						showErrorMessage(data.message);
 					}
@@ -661,7 +661,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 				type:'2'
 			};
 			}
-			$.Logout("http://172.16.154.130", params, function(data) {
+			$.Logout("http://172.16.154.130/cgi-bin/srun_portal", params, function(data) {
 				if (data.error == "ok") {
 					$("pre").css("background","#1aad18");
 					$("#statusbar").text("正在注销...成功！");
@@ -771,7 +771,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 				SpeedLimitError: "认证请求太频繁，请稍后10s重试",
 				SrunPortalServerError: "Portal服务请求错误",
 				AuthResaultTimeoutErr: "Portal服务请求超时",
-				IpAlreadyOnlineError: "本机IP已经使用其他账号登陆在线了",
+				IpAlreadyOnlineError: "本机IP已经使用其他账号登录在线了",
 				MemoryDbError: "SRun认证服务(srun_portal_server)无响应",
 				GetVerifyCode: "获取验证码",
 				S: "秒",
