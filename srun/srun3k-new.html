@@ -84,20 +84,25 @@
 						</div>
 				</div>
 			<br><p>建议另存为到本地后使用。另外本页面将会经常更新，请经常访问和更新您的本地版本哦~</p>
-			<pre style="background: rgb(26, 173, 24);"><div id="statusbar">正在获取状态...成功！</div></pre>
+			<!-- <pre style="background: rgb(26, 173, 24);"><div id="statusbar">正在获取状态...成功！</div></pre> -->
+			<pre><div id="statusbar">欢迎使用校园网登陆器网页版！</div></pre> 
 		</div>
 	</div>
 	<br><br>
 	<p class="foot">
-		© Srun3k Client v2.1.0 
+		© Srun3k Client v2.1.1
 		<br>
 		Authored by <b><font><a href="https://github.com/zeng-xs/srun3k-client/" target="_blank">Zengxs</a></font></b> 
 		| Beautified by <b><font><a href="https://www.noisky.cn/" target="_blank">Noisky</a></font></b> 
 		| Modified by <b><font><a href="http://ehaut.cn" target="_blank">E-HAUT</a> Team</font></b> 
 		<br>
 		<b><font><a href="http://ehaut.cn/srun/srun3k-new.html" target="_blank">本页地址</a></font></b> 
-		| <b><font><a href="http://ehaut.cn" target="_blank">FAQ</a></font></b> 
+		| <b><font><a href="http://ehaut.cn/#/faq" target="_blank">FAQ</a></font></b> 
+		| <b><font><a href="http://ehaut.cn/#/changelog" target="_blank">更新记录</a></font></b> 
+		| <b><font><a href="http://ehaut.cn/#/guide" target="_blank">开发者指南</a></font></b> 
+		| <b><font><a href="http://ehaut.cn/#/thanks" target="_blank">贡献者名单</a></font></b> 
 		| <b><font><a href="https://github.com/ehaut/ehaut" target="_blank">GitHub</a></font></b>  
+
 	</p>
 </body>
 
@@ -396,6 +401,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 		{//非登陆后获取公告
 			$("#statusbar").text("正在获取状态...");
 		}*/
+		$("pre").css("background","#3498db");
+		$("#statusbar").text("正在获取状态...");
 		$.ajax({
 				url:'http://172.16.154.130/cgi-bin/rad_user_info',
 				method:'get',
@@ -415,6 +422,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 					}	
 					else if(data.error=='ok') {
 						//在线处理
+						$("#statusbar").text("正在获取状态...成功！");
+						$("pre").css("background","#1aad18");
 						if(ReGetStatus != "NO"){//非登陆后获取公告
 							$("#statusbar").text("正在获取状态...成功！");
 							$("pre").css("background","#1aad18");
@@ -434,6 +443,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {   
 					//处理网络情况
+					$("pre").css("background","#E05D6F");
+					$("#statusbar").text("正在获取状态...连接服务器失败！");
 					ShowBox('error');
 				},
 		});
