@@ -2,6 +2,9 @@
 
 - 2018.10.16 V2.1.1
   - 修正一些小bug。
+  - 修正Limit Users Err错误的data.message代码。
+  - 修改注销URL。
+  - 修正部分登陆->登录
 
 - 2018.10.15 V2.1.0 
   - 修正AuthInfoError错误
