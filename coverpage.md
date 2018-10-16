@@ -7,6 +7,6 @@
 
 
 [点击体验](http://ehaut.cn/srun/srun3k-new.html)
-[开发指南](#/guide)
-[FAQ](#/faq)
+[开发指南](http://ehaut.cn/#/guide)
+[FAQ](http://ehaut.cn/#/faq)
 [GitHub](https://github.com/ehaut/ehaut)
