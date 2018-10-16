@@ -1,4 +1,4 @@
-<!-- docs/guide.md -->
+<!-- ./docs/guide.md -->
 
 # 开发者指南
 
