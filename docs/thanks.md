@@ -2,9 +2,11 @@
 
 ### 本项目离不开以下大大佬的帮助：
 
+ - <a href="https://github.com/zengxs">@zengxs</a>
  - <a href="https://github.com/samuelts">@samuelts</a>
  - <a href="https://github.com/ygqsgm">@UncleGen</a>
- - <a href="https://github.com/noisky">@noisky</a>
+ - <a href="https://github.com/noisky">@Noisky</a>
+ - <a href="https://github.com/CHN-STUDENT">@CHN-STUDENT</a>
  - <a href="https://github.com/228864718">@Winery</a>
  - <a href="https://github.com/sunriseydy">@SunriseYDY</a>
  - <a href="https://github.com/lichen404">@lichen404</a>
