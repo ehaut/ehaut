@@ -5,7 +5,7 @@
 * [FAQ](/docs/faq.md)
 * [更新记录](/docs/changelog.md)
 * [贡献名单](/docs/thanks.md)
-* [其他版本](https://ffis.me/jiaowu/srun.html)
+* [其他版本](/docs/version.md)
 * **Links**
 * [![Code](https://icongr.am/material/emoticon-excited.svg?size=16&color=808080)Demo](http://ehaut.cn/srun/srun3k-new.html)
 * [![Github](https://icongram.jgog.in/simple/github.svg?color=808080&size=16)Github](https://github.com/ehaut/ehaut)
