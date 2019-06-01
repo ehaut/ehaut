@@ -48,11 +48,11 @@
 				</div>
 				<div id="logout_box" style="display: inline;">
 					<div id="info">
-						<!--
-							V2.1.2 UPDATE BY CHN-STUDENT 
-							为了安全，这部分应该由加载时由JS自动写入防止本地后造成的隐私泄露
-							感谢 @Baninn
-						-->
+						<h2>您已经在线</h2>		
+						<h3>用户名: <span id="user_name">请等待...</span></h3>
+						<h3>已用流量: <span id="used_flow">请等待...</span></h3>
+						<h3>已用时长: <span id="used_time">请等待...</span></h3>
+						<h3>IP地址: <span id="ip">请等待...</span></h3>  
 					</div>
 					<div class="m">
 						<button class="ui button" type="submit" onclick="Message()">查看公告</button>
@@ -363,15 +363,6 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 				$("pre").css("background","#ffcd43");
 				return false;
 			};
-			var html = (function () {/*
-				<h2>您已经在线</h2>		
-				<h3>用户名: <span id="user_name">请等待...</span></h3>
-				<h3>已用流量: <span id="used_flow">请等待...</span></h3>
-				<h3>已用时长: <span id="used_time">请等待...</span></h3>
-				<h3>IP地址: <span id="ip">请等待...</span></h3>  
-			*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
-			var target = document.getElementById('info');
-			target.innerHTML = html;
 			if(set_username!='')
 				document.getElementById("username").value=set_username;
 			if(set_password!='')
