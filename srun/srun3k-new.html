@@ -75,9 +75,9 @@
 							<button class="ui red button" type="submit" onclick="GetStatus()">&nbsp;重&nbsp;试&nbsp;</button>
 						</div>
 				</div>
-			<br><p>建议另存为到本地后使用。另外本页面将会经常更新，请经常访问和更新您的本地版本哦~</p>
+			<br><p><font color="red">建议<a href="http://ehaut.cn/download/lastest.zip">点击这里</a>下载解压后使用。（<a href="https://github.com/ehaut/ehaut/issues/4">为什么？</a>）</font></p>
 			<!-- <pre style="background: rgb(26, 173, 24);"><div id="statusbar">正在获取状态...成功！</div></pre> -->
-			<pre style="background: rgb(26, 173, 24);"><div id="statusbar">正在获取状态...成功！</div></pre> 
+			<pre style="background: rgb(26, 173, 24);" id="pre"><div id="statusbar">正在获取状态...成功！</div></pre> 
 		</div>
 	</div>
 	<br><br>
@@ -88,8 +88,8 @@
 		| Beautified by <b><font><a href="https://www.noisky.cn/" target="_blank">Noisky</a></font></b> 
 		| Modified by <b><font><a href="http://ehaut.cn/" target="_blank">E-HAUT</a> Team</font></b> 
 		<br>
-		<b><font><a href="http://ehaut.cn/srun/srun3k-new.html" target="_blank">本页地址</a></font></b> 
-		| <b><font><a href="http://ehaut.cn/#/docs/faq" target="_blank">FAQ</a></font></b> 
+		<!-- <b><font><a href="http://ehaut.cn/srun/srun3k-new.html" target="_blank">本页地址</a></font></b> | -->
+	   	<b><font><a href="http://ehaut.cn/#/docs/faq" target="_blank">FAQ</a></font></b> 
 		| <b><font><a href="http://ehaut.cn/#/docs/changelog" target="_blank">更新记录</a></font></b> 
 		| <b><font><a href="http://ehaut.cn/#/docs/guide" target="_blank">开发者指南</a></font></b> 
 		| <b><font><a href="http://ehaut.cn/#/docs/thanks" target="_blank">贡献者名单</a></font></b> 
@@ -358,6 +358,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 		$(document).ready(function(){
 			//检查LocalStorage是否存在，存在则读取并且设置标志位
 			//IE和EDGE不支持LocalStorage
+			document.oncontextmenu = function(){
+				$("#statusbar").html("为了安全本网页已经禁止右键直接保存，请您<a href=\"http://ehaut.cn/download/lastest.zip\">下载</a>解压后使用！");
+				$("pre").css("background","#ffcd43");
+				return false;
+			};
 			var html = (function () {/*
 				<h2>您已经在线</h2>		
 				<h3>用户名: <span id="user_name">请等待...</span></h3>

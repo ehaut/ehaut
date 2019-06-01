@@ -1,5 +1,10 @@
 # 常见问题解答
 
+### Q: 为什么一定要下载解压后使用，不能直接右键保存
+
+A：我们发现了因在线时右键保存网页会将在线信息写入本地造成隐私泄露<a href="https://github.com/ehaut/ehaut/issues/4">为什么？</a>），因此为了安全，建议现在<a href="http://ehaut.cn/download/lastest.zip">下载</a>解压后使用。
+
+
 ### Q: IE 和 EDGE 无法保存用户信息
 
 A: 由于官方bug，IE 和 EDGE 是无法调用`LocalStorage` 保存用户信息的，
