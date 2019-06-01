@@ -7,7 +7,7 @@
 * [贡献名单](/docs/thanks.md)
 * [其他版本](/docs/version.md)
 * **Links**
-* [![Code](https://icongr.am/material/emoticon-excited.svg?size=16&color=808080)Download](http://ehaut.cn/download/lastest.zip)
+* [![Code](https://icongr.am/material/emoticon-excited.svg?size=16&color=808080)Download](https://raw.githubusercontent.com/ehaut/ehaut/master/download/lastest.zip)
 * [![Github](https://icongram.jgog.in/simple/github.svg?color=808080&size=16)Github](https://github.com/ehaut/ehaut)
 * [![Published with docsify](https://static.ffis.me/docsify/img/docsify16x16.png)Published with docsify](http://docsify.js.org)
 
