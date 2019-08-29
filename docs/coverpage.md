@@ -6,7 +6,7 @@
 - A easy srun3k client written in HTML/JavaScript for HAUT campus network.
 
 
-[点击下载](https://raw.githubusercontent.com/ehaut/ehaut/master/download/lastest.zip)
+[点击使用](https://ehaut.cn/srun/srun3k-new.html)
 [开发指南](/docs/guide#开发者指南)
 [FAQ](/docs/faq#常见问题解答)
 [其他版本](/docs/version)

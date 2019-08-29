@@ -16,8 +16,9 @@ e 河工大-新河南工业大学校园网客户端
 
  - 基于 <a href="https://github.com/samuelts/srun3k-client/"><b><font>@samuelts </font></b></a> 和 <a href="https://github.com/noisky/srun3k-sb-client/"><b><font>@noisky </font></b></a> 版美化。
 
- - 使用方法：<a href="http://ehaut.cn/download/lastest.zip">点击这里</a>下载解压后使用。（<a href="https://github.com/ehaut/ehaut/issues/4">为什么？</a>）
-
+ - 使用方法：建议使用离线版（<a href="https://github.com/ehaut/ehaut/issues/4">为什么？</a>）
+   - 离线版：<a href="https://raw.githubusercontent.com/ehaut/ehaut/master/download/lastest.zip">点击这里</a>下载解压后使用。
+   - 您也可以使用在线版：<a href="./srun/srun3k-new.html">点击打开在线版</a>
 
 ### TODO :
   - 开发者指南 http://ehaut.cn/#/docs/guide （构建中）
