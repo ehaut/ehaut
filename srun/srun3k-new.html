@@ -82,7 +82,7 @@
 	</div>
 	<br><br>
 	<p class="foot">
-		Srun3k Client v2.1.2 &copy; 2016-2019
+		Srun3k Client v2.1.2 &copy; 2016-<span class="getThisYear"/>
 		<br>
 		Authored by <b><font><a href="https://github.com/zengxs/srun3k-client/" target="_blank">Zengxs</a></font></b> 
 		| Beautified by <b><font><a href="https://www.noisky.cn/" target="_blank">Noisky</a></font></b> 
@@ -695,6 +695,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAAA9CAYAAADYizcVAAAABHNCSVQICA
 			}
 			layer.alert(message, { icon: icon, skin: 'layui-layer-molv', btn:[(errorCode['OK']||"OK")], title:errorCode['Info']||"Info" });
 		}
+		$('.getThisYear').html(new Date().getFullYear());
 	</script>
 	<script>
 			var errorCode = {
