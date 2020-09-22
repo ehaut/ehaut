@@ -20,4 +20,4 @@
 
 
 - NodeMCU版本
-  - <a href="https://github.com/chillsoul/ESP8266-Srun3kAutoLogin">ESP8266自动登录版</a> 
+  - <a href="https://github.com/chillsoul/ESP8266-Srun3kAutoLogin">ESP8266</a> 
