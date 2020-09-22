@@ -17,3 +17,7 @@
 
 - 路由器版本
   - <a href="https://github.com/ehaut/autologin-srun3k">OpenWrt 路由器</a> 
+
+
+- NodeMCU版本
+  - <a href="https://github.com/chillsoul/ESP8266-Srun3kAutoLogin">ESP8266自动登录版</a> 
