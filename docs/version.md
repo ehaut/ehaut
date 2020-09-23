@@ -13,11 +13,10 @@
 
 - 命令行版本
   - <a href="https://github.com/ehaut/srun3k-client-cli">命令行Python版</a> 
-
+  - <a href="https://github.com/rainvalley/Srun_Linux/blob/master/srun.sh">Bash版</a> 
 
 - 路由器版本
   - <a href="https://github.com/ehaut/autologin-srun3k">OpenWrt 路由器</a> 
-
 
 - NodeMCU版本
   - <a href="https://github.com/chillsoul/ESP8266-Srun3kAutoLogin">ESP8266</a> 
