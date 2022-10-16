@@ -22,6 +22,7 @@
 
 - 路由器(Openwrt)
   - [Openwrt自启动服务版](https://github.com/CHxCOOH/Srun_Openwrt)
+  - [Openwrt深澜通用插件(暂时x86 only)](https://github.com/Revincx/bitsrunlogin-go)
   - [bash版](https://github.com/rainvalley/Srun_Linux/)
   - [Openwrt Python](https://github.com/ehaut/autologin-srun3k)
 
