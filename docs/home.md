@@ -3,7 +3,12 @@ A  **easy** srun3k client written in HTML/JavaScript for **HAUT** campus network
 
 e 河工大-新河南工业大学校园网客户端
 
--------
+------- 
+
+### 最新提醒
+
+目前校内宿舍区校园网已经支持**认证页面直接登录**，无需下载客户端。
+请优先考虑使用官方的网页登录。
 
 ### 简介：
  -  纯 HTML + JavaScript 实现，仅需任意浏览器一枚即可运行，无需安装任何运行时。
