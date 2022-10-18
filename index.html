@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
   <meta charset="UTF-8">
   <title>Developer Guide</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="author" content="Zengxs,Noisky">
   <meta name="copyright" content="Noisky's Laboratory">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta name="HandheldFriendly" content="true">
   <meta name="renderer" content="webkit">
   <link rel="stylesheet" href="//static.ffis.me/docsify/css/theme-simple.css?v=0.4.8">
-  <link rel="stylesheet" href="//static.ffis.me/docsify/css/gitment.css?v=1.3">
+  <link rel="stylesheet" href="//cdn.staticfile.org/gitalk/1.8.0/gitalk.css">
   <script src="//static.ffis.me/docsify/js/EditOnGithub.js?v=1.2"></script>
   <!-- Custom theme stylesheet -->
   <style>
-  .markdown-section a {color: var(--theme-color);}
+    .markdown-section a {
+      color: var(--theme-color);
+    }
+
+    .gt-container .gt-avatar img {
+      border-radius: 6px;
+    }
+
+    .gt-container .gt-comment-content {
+      border-radius: 8px;
+      border: 1px solid rgb(208, 219, 222);
+    }
   </style>
 </head>
+
 <body>
   <div data-app id="main">Please wait...</div>
   <script>
     window.$docsify = {
-	  loadSidebar: true,
-	  alias: {
-          '/.*/_sidebar.md': '/_sidebar.md'
-          },
-	  homepage: './docs/home.md',
-	  coverpage: './docs/coverpage.md',
-	  subMaxLevel: 2,
+      loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      homepage: './docs/home.md',
+      coverpage: './docs/coverpage.md',
+      subMaxLevel: 2,
       name: 'Developer Guide',
-	  el:'#main',
+      el: '#main',
       repo: 'https://github.com/ehaut/ehaut',
-	  search: {
+      search: {
         noData: {
           '/': '找不到结果!'
         },
@@ -40,36 +54,38 @@
           '/': '搜索'
         }
       },
-	   themeable: {
-          readyTransition : true,
-          responsiveTables: true
+      themeable: {
+        readyTransition: true,
+        responsiveTables: true
       },
-	   plugins: [
-          EditOnGithubPlugin.create(
+      plugins: [
+        EditOnGithubPlugin.create(
           'https://github.com/ehaut/ehaut/blob/master/'
-          )
-		]
+        )
+      ]
     }
   </script>
   <main>
     <section class="content">
       <article class="markdown-section" id="main">
         <div id="container"></div>
-      <article>
-	</section>
+        <article>
+    </section>
   </main>
-  <script src="//static.ffis.me/docsify/js/gitment.js?v=1.1"></script>
-    <script>
+
+  <script src="//cdn.staticfile.org/docsify/4.12.2/plugins/gitalk.min.js"></script>
+  <script src="//cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+  <script>
     var clientId = '3b1cdd7354b40e3c3a6e'
     var clientSecret = '46ce1130ece49e8f0d4a864c7176d8745ba25e9d'
-    var gitment = new Gitment({
-      id: 'Feedback',
-      owner: 'noisky',
+
+    const gitalk = new Gitalk({
+      clientID: clientId,
+      clientSecret: clientSecret,
       repo: 'ehaut',
-      oauth: {
-        client_id: clientId,
-        client_secret: clientSecret,
-      },
+      owner: 'ehaut',
+      admin: ['noisky', 'CHN-STUDENT', 'Revincx'],
+      id: 'Feedback'
     })
 
     gitment.render('container')
@@ -79,4 +95,5 @@
   <script src="//static.ffis.me/docsify/js/search.min.js?v=4.7.1"></script>
 
 </body>
+
 </html>
